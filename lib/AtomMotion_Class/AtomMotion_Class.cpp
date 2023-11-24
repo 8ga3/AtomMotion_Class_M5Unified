@@ -4,7 +4,7 @@ namespace m5
 {
   bool AtomMotion::writeRegister16(std::uint8_t reg, std::uint16_t data)
   {
-    std::uint8_t buf[2] = {data >> 8, data & 0xFF};
+    std::uint8_t buf[2] = {(uint8_t)(data >> 8), (uint8_t)(data & 0xFF)};
     return writeRegister(reg, buf, sizeof(buf));
   }
 
